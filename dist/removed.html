@@ -1,0 +1,119 @@
+<div class="col-md-4 mb-5">
+    <div class="card">
+    <div class="ccc">
+        <p class="text-center"><img src="./images/colon-cleaner.jpg" class="imw"></p> 
+<!--                               <div class="overlay">
+        <div class="text">View Details</div>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5  class="text-center">Colon Cleaner Hot Sauce</h5> 
+        <p  class="text-center">Price: $12.99</p>
+        <p class="text-center"><input type="submit" name="buy" value="Add to Cart" class=" cc1"></p>
+    </div>
+    </div>
+</div>
+<div class="col-md-4 ">
+    <div class="card">
+    <div class="ccc">
+        <p class="text-center"><img src="./images/slap-ya-mama.jpg" class="imw"></p> 
+<!--                               <div class="overlay">
+        <div class="text">View Details</div>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5  class="text-center">Slap Ya Mama Hot Sauce</h5> 
+        <p  class="text-center">Price: $9.99</p>
+        <p class="text-center"><input type="submit" name="buy" value="Add to Cart" class=" cc1"></p>
+    </div>
+    </div>
+</div>
+<div class="col-md-4 ">
+    <div class="card">
+    <div class="ccc">
+        <p class="text-center"><img src="./images/rectal-rocket-fuel.jpg" class="imw"></p> 
+<!--                               <div class="overlay">
+        <div class="text">View Details</div>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5  class="text-center">Rectal Rocket Fuel Hot Sauce</h5> 
+        <p  class="text-center">Price: $10.99</p>
+        <p class="text-center"><input type="submit" name="buy" value="Add to Cart" class=" cc1"></p>
+    </div>
+    </div>
+</div>
+<div class="col-md-4 ">
+    <div class="card">
+    <div class="ccc">
+        <p class="text-center"><img src="./images/generals-hot-sauce.jpg" class="imw"></p> 
+<!--                               <div class="overlay">
+        <div class="text">View Details</div>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5  class="text-center">General's Hot Sauce</h5> 
+        <p  class="text-center">Price: $14.95</p>
+        <p class="text-center"><input type="submit" name="buy" value="Add to Cart" class=" cc1"></p>
+    </div>
+    </div>
+</div>
+<div class="col-md-4 ">
+    <div class="card">
+    <div class="ccc">
+        <p class="text-center"><img src="./images/statans-rage.jpg" class="imw"></p> 
+<!--                               <div class="overlay">
+        <div class="text">View Details</div>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5  class="text-center">Satan's Rage Ghost Pepper Hot Sauce</h5> 
+        <p  class="text-center">Price: $12.99</p>
+        <p class="text-center"><input type="submit" name="buy" value="Add to Cart" class=" cc1"></p>
+    </div>
+    </div>
+</div>
+<div class="col-md-4 ">
+    <div class="card">
+    <div class="ccc">
+        <p class="text-center"><img src="./images/crazy-bastard.jpg" class="imw"></p> 
+<!--                               <div class="overlay">
+        <div class="text">View Details</div>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5  class="text-center">Crazy Bastard Sauce</h5> 
+        <p  class="text-center">Price: $9.99</p>
+        <p class="text-center"><input   type="submit" 
+                                        name="buy" 
+                                        value="Add to Cart" 
+                                        class=" cc1"
+                                        onclick="addToCart(item, user, quantity)"
+                                        
+                                        >
+
+                                    
+                                    </p>
+    </div>
+    </div>
+</div>
+
+
+
+export function adddToCart(prodId:string){
+    
+    document.querySelectorAll('.product-click').forEach((selector)=> {
+        selector.addEventListener('click', (e)=>{
+            const shp = localStorage.getItem('shop')!
+            var shop = JSON.parse(shp)
+            var usr = localStorage.getItem('user')!
+            var user = JSON.parse(usr)
+            var prod = Object.entries(shop)
+            var filtered = prod.filter(([key, value]) => typeof value === prodId)
+            var product = Object.fromEntries(filtered) as Items
+            addToCart(product,user,1)
+            printCart(user)
+        })
+    })
+}
+onclick="addToCart(${prod},${user},${1})

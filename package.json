@@ -1,0 +1,28 @@
+{
+  "name": "shoppingcart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run bundle && npm-run-all --parallel watch serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "serve": "cd dist && live-server --port=8000",
+    "bundle": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.22",
+    "@types/node": "^20.6.3",
+    "@types/uuid": "^9.0.5",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "uuid": "^9.0.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
